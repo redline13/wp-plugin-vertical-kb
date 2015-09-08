@@ -65,6 +65,8 @@ function vskb_columns( $vskb_cats, $columns, $subcats = false, $excludes = null,
 
 		$catColumn = $subCats ? 'category__in' : 'cat';
 		$vskb_args = array(
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
 			'posts_per_page' => -1, // -1 means list all posts
 			$catColumn => $cat->cat_ID // list posts from all categories and posts from sub category will be listed underneath their parent category
 		);
